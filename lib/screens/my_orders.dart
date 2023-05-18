@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class MyOrders extends StatefulWidget {
@@ -17,9 +18,12 @@ class _MyOrdersState extends State<MyOrders> {
         title: const Text('My Orders'),
       ),
       body: StreamBuilder<QuerySnapshot>(
-          stream: FirebaseFirestore.instance.collection('Supplies').snapshots(),
+          stream: FirebaseFirestore.instance
+              .collection('Supplies')
+              .where('uid', isEqualTo: FirebaseAuth.instance.currentUser?.uid)
+              .snapshots(),
           builder: (context, snapshot) {
-            getData() {
+            try {
               if (snapshot.hasData) {
                 List<ListTile> supplies = [];
 
@@ -43,17 +47,7 @@ class _MyOrdersState extends State<MyOrders> {
                     );
                   },
                 );
-              } else {
-                return const Text('Cannot work sorry!');
               }
-            }
-
-            try {
-              return (snapshot.connectionState == ConnectionState.waiting)
-                  ? const Center(
-                      child: CircularProgressIndicator(),
-                    )
-                  : getData();
             } catch (e) {
               print(e);
             }
