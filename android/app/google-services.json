@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "556183491727",
+    "project_id": "medsupps-25a42",
+    "storage_bucket": "medsupps-25a42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556183491727:android:bd9ff41d645262b12a4cfa",
+        "android_client_info": {
+          "package_name": "com.example.meds_supps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556183491727-sr528oerr590edtb2gs23nn475oshblo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArlU_WcQ3nB95YgFz9-WklNM4kOs_17xQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556183491727-sr528oerr590edtb2gs23nn475oshblo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
